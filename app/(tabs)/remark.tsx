@@ -1,14 +1,15 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { ThemedText as Text } from '@/components/ThemedText';
+import { ThemedView as View } from '@/components/ThemedView';
 
-export default function HomeScreen() {
+export default function RemarkScreen() {
   return (
     <View style={styles.background}>
-      <Text style={styles.greeting}>Hello, Jelly!</Text>
-      <Text style={styles.subtitle}>Which book suits your current mood?</Text>
+      <Text style={styles.greeting}>Remarks</Text>
+      <Text style={styles.subtitle}>Your reading notes</Text>
       <View style={styles.contentContainer}>
-        <Text style={styles.title}>Remember, Jelly. You have an unfinished book since July 30, 2021</Text>
+        <Text style={styles.title}>Your reading remarks will appear here</Text>
       </View>
     </View>
   );
@@ -52,4 +53,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333333',
   },
-});
+}); 
