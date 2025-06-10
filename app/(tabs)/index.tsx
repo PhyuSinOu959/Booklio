@@ -1,10 +1,12 @@
 import { ThemedText as Text } from '@/components/ThemedText';
+import { router } from 'expo-router';
 import { FlatList, Pressable, StyleSheet, View } from 'react-native';
 import { categories } from './dummy';
 
 export default function HomeScreen() {
-
-
+  const handleCategoryPress = (categoryName: string) => {
+    router.push(`/book-list?category=${encodeURIComponent(categoryName)}`);
+  };
 
   const renderCategories = () => {
     return (
@@ -14,7 +16,10 @@ export default function HomeScreen() {
           numColumns={2}
           columnWrapperStyle={styles.row}
           renderItem={({item}) => (
-            <Pressable style={styles.categoryItem}>
+            <Pressable 
+              style={styles.categoryItem}
+              onPress={() => handleCategoryPress(item.name)}
+            >
               <Text style={styles.categoryText}>{item.name}</Text>
             </Pressable>
           )}
