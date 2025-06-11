@@ -67,4 +67,19 @@ export const books: Book[] = [
     category: 'Fiction',
     rating: 4.6
   }
+  {
+    id: '5',
+    title: '1984',
+    author: 'George Orwell',
+    coverImage: 'https://example.com/1984.jpg',
+    category: 'Fiction',
+    rating: 4.6
+  }{
+    id: '6',
+    title: '1984',
+    author: 'George Orwell',
+    coverImage: 'https://example.com/1984.jpg',
+    category: 'Fiction',
+    rating: 4.6
+  }
 ];
