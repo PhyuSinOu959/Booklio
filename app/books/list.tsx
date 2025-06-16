@@ -1,6 +1,6 @@
 import { Book, books } from '@/app/(tabs)/dummy';
 import { ThemedText as Text } from '@/components/ThemedText';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { FlatList, Image, Pressable, StyleSheet, View } from 'react-native';
 
 export default function BookListScreen() {
@@ -8,8 +8,15 @@ export default function BookListScreen() {
   
   const filteredBooks = books.filter(book => book.category === category);
 
+  const handleBookPress = (bookId: string) => {
+    router.push(`/books/${bookId}`);
+  };
+
   const renderBookItem = ({ item }: { item: Book }) => (
-    <Pressable style={styles.bookItem}>
+    <Pressable 
+      style={styles.bookItem}
+      onPress={() => handleBookPress(item.id)}
+    >
       <Image
         source={{ uri: item.coverImage }}
         style={styles.coverImage}

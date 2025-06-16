@@ -5,7 +5,7 @@ import { categories } from './dummy';
 
 export default function HomeScreen() {
   const handleCategoryPress = (categoryName: string) => {
-    router.push(`/book-list?category=${encodeURIComponent(categoryName)}`);
+    router.push(`/books/list?category=${encodeURIComponent(categoryName)}`);
   };
 
   const renderCategories = () => {
